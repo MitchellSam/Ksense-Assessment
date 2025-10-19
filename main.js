@@ -158,7 +158,7 @@ async function main() {
     const patients = await fetchAllPatients(20);
     const payload = buildAlertLists(patients);
     const result = await submitAssessment(payload);
-    console.log('Submission result:', result);
+    console.log('Submission result:', JSON.stringify(result, null, 2));
   } catch (err) {
     console.error('Error:', err.message || err);
     process.exitCode = 1;
